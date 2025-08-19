@@ -1,2 +1,2 @@
-# pydev_cbs_25
+# Pytho developer couses learning repo
 python automation learning repo
