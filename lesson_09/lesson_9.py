@@ -62,6 +62,7 @@ def pum_a():
     a = 7  # E
 
     def print_a():
+        # global a
         a = 5  # L
         print(a)
 
@@ -70,6 +71,8 @@ def pum_a():
 
 b = 25
 
+# def print(*args):
+#     pass
 
 def print_b():
     # a = 5
