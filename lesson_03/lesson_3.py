@@ -26,7 +26,7 @@ print(state_msg)
 # "Alex" # True
 # [] # True
 # 7 # True
-# 0.001 # False 
+# 0.000 # False 
 
 False == "", [], (), {}, 0, 0.0 # None
 
