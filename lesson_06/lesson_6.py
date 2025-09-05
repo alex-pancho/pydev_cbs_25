@@ -134,7 +134,7 @@ my_tuple = (10, 20, 30, 40, 50)
 list_from_tuple = list(my_tuple)
 print(list_from_tuple)
 
-my_dict = {"key":'val', "key2":"val2"}
+my_dict = {"key":'val', "key2":"val2", "NEXT": {"a": "aaaaa", "b": "BBBBB"}}
 list_from_dict = list(my_dict)
 print(list_from_dict)
 
@@ -145,3 +145,12 @@ even_numbers = [x for x in range(10) if x % 2 == 0]
 print(even_numbers)
 word_lengths = [len(word) for word in words]
 print(word_lengths)
+
+for key in my_dict:
+    print(key)
+
+for key, values in my_dict.items():
+    print(key, values)
+    if isinstance(values, dict):
+        for k, v in values.items():
+            print(k, v)
