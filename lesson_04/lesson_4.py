@@ -18,12 +18,12 @@
 #     if n >= 10:
 #         break
 
-# x = 0
-# while x < 10:
-#     x += 1
-#     if x == 5 or x == 6 or x== 9 or x == 7:
-#         continue
-#     print('Поточне число дорівнює', x)
+x = 0
+while x < 10:
+    x += 1
+    if x == 5 or x == 6 or x== 9 or x == 7:
+        continue
+    print('Поточне число дорівнює', x)
 
 # while True:
 #     num = input("Введіть додатнє число: ")
