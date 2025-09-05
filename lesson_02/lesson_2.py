@@ -15,7 +15,7 @@ my_list = [
     3, 
     4,
     5, 
-    6
+    6,
 ]
 
 '''
@@ -83,6 +83,7 @@ item = some_lst[0]
 print("list item", item)
 
 print(some_lst.__len__())
+print(len(some_lst))
 
 val1 = "VALue#1"; val2 = "valUE#2"
 

@@ -16,14 +16,17 @@ def long_function_name(var_one, var_two, var_three, var_four): # i can add some
 
 def long_function_name(
         var_one, var_two, var_three,
-        var_four):
+        var_four,
+    ):
     print(var_one)
+
 
 def long_function_name(
         var_one,
         var_two,
         var_three,
-        var_four):
+        var_four,
+    ):
     print(var_one)
     print(var_two)
 
@@ -40,6 +43,7 @@ class MyClass():
 
     def func_2(self):
         pass
+
 
 if __name__ == "__main__":
     print("hello")

@@ -6,7 +6,7 @@ Conent for output
 =======================
 """
 
-def line_for_break(counter):
+def line_for_break(counter:int) -> str:
     output = "=" * counter
     return output
 

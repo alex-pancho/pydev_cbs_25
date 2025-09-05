@@ -112,3 +112,8 @@ name = "Василь"
 age = 25
 some_str_out = f"Привіт, {name}! Тобі {age} років."
 print(some_str_out)
+
+
+str1 = "find me"
+if str1.find("deza") == -1:
+    print("unexpected find!!")
