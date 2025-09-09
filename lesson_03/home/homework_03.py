@@ -178,5 +178,5 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 result = [num ** 2 for num in numbers if num % 2 == 0]
 
-print(f"\n{result}")  #  [4, 16, 36, 64, 100]
+print(f"Вправа 10:\n{result}")  #  [4, 16, 36, 64, 100]
 print()
