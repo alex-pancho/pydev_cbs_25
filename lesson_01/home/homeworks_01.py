@@ -1,6 +1,6 @@
 # task 01 == Виправте синтаксичні помилки
 print("Hello", end = " ")
-    print("world!")
+print("world!")
 
 # task 02  == Виправте назви змінних, щоб текст виводався
 hello = "Hello"
