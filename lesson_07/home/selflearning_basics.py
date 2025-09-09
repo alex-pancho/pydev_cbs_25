@@ -13,11 +13,11 @@ numbers = []  # Ваш код тут
 # Task 3. Вставте число 0 на початок списку numbers  
 # Ваш код тут
 
-# Task 4. Видаліть перше входження числа 3 зі списку
-fruits = ['apple', 'banana', 'cherry', 'banana', 'date']
+# Task 4. Видаліть перше входження числа 3 зі списку numbers
 # Ваш код тут
 
 # Task 5. Знайдіть індекс елемента 'cherry' у списку fruits
+fruits = ['apple', 'banana', 'cherry', 'banana', 'date']
 cherry_index = None  # Ваш код тут
 
 # Task 6. Порахуйте кількість входжень 'banana' у списку fruits
