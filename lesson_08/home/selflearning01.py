@@ -25,8 +25,9 @@
 def analyze_list(numbers):
     if not numbers:
         return {'sum': 0, 'max': None, 'min': None, 'len': 0}
+    # Ваш код тут
     return {
-        # Ваш код тут
+        'sum': sum(numbers), 'max': max(numbers), 'min': min(numbers), 'len': len(numbers)
     }
 
 # -------------------------------------------------------------------------------------
@@ -43,10 +44,15 @@ def analyze_list(numbers):
 # sorted_list = get_sorted_list(original_list)
 # print(sorted_list)  # повинно вивести [1, 2, 5, 8]
 # print(original_list) # повинно вивести [5, 2, 8, 1]
-def get_sorted_list(numbers):
-    # Ваш код тут
-    return 
 
+def get_sorted_list(numbers):
+    sorted_list = sorted(numbers)
+    # Ваш код тут
+    return sorted_list
+numbers = [5, 2, 8, 1]
+print(f"sorted_list: {get_sorted_list(numbers)}")
+print(f"original numbers: {numbers}")
+print()
 # -------------------------------------------------------------------------------------
 
 # Завдання 3: Створення функції з аргументами за замовчуванням
@@ -60,8 +66,12 @@ def get_sorted_list(numbers):
 # greet("Іван") повинна повернути "Привіт, Іван!"
 # greet("Олена", "Доброго дня") повинна повернути "Доброго дня, Олена!"
 def greet(name, greeting="Привіт"):
+    user_greet = f"{greeting}, {name}!"
     # Ваш код тут
-    return 
+    return user_greet
+print(greet("Vasya", "Obebasya"))
+print(greet("Tolik"))
+print()
 # -------------------------------------------------------------------------------------
 
 # Завдання 4: Використання `*args`
@@ -75,8 +85,16 @@ def greet(name, greeting="Привіт"):
 # multiply_all(10, 2) повинна повернути 20
 # multiply_all() повинна повернути 1
 def multiply_all(*args):
+    multiply = 1
+    for num in args:
+        multiply *= num
     # Ваш код тут   
-    return 
+    return multiply
+
+print(f"multiply_all(1, 2, 3): {multiply_all(1, 2, 3)}")
+print(f"multiply_all(10, 2): {multiply_all(10, 2)}")
+print(f"multiply_all(): {multiply_all()}")
+print()
 
 # -------------------------------------------------------------------------------------
 
@@ -91,9 +109,30 @@ def multiply_all(*args):
 # Приклад:
 # create_profile(name="Іван", age=25) повинна повернути рядок:
 # "age: 25\nname: Іван"
+
+
 def create_profile(**kwargs):
-    # Ваш код тут
-    return 
+    profile = []
+    for key in kwargs:
+       profile.append(f'{key}: {kwargs[key]}')
+    return "\n".join(profile)
+
+
+def create_profile(**kwargs):
+    profile = []
+    for key, value in kwargs.items():
+       profile.append(f'{key}: {value}')
+    return "\n".join(profile)
+
+
+def create_profile(**kwargs):
+   return "\n".join([f'{key}: {value}' for key, value in kwargs.items()])
+
+
+print(create_profile(name="Іван", age=25))
+print()
+print(create_profile(name="John", age=30, city="New York"))
+print()
 # -------------------------------------------------------------------------------------
 
 # Завдання 6: Комбінація позиційних та ключових аргументів
@@ -116,9 +155,23 @@ def create_profile(**kwargs):
 # format_data("Cities", "Kyiv", "Lviv")
 # повинна повернути: "Cities: Item: Kyiv, Item: Lviv"
 def format_data(main_title, *items, **options):
-    # Ваш код тут
+     # Ваш код тут
+    prefix = options.get('prefix', 'Item')
+    separator = options.get('separator', ', ')
 
-    return 
+    data_items = []
+    for item in items:
+        data_items.append(f'{prefix}: {item}')
+    
+    sep_data_items = separator.join(data_items)
+
+    ret_sep_data_items = f'{main_title}: {sep_data_items}'
+
+    return ret_sep_data_items
+ 
+print(format_data("Products", "Apple", "Banana", separator=" | ", prefix="Fruit"))
+print(format_data("Cities", "Kyiv", "Lviv"))
+
 
 # -------------------------------------------------------------------------------------
 
@@ -133,7 +186,11 @@ def format_data(main_title, *items, **options):
 # is_even(2) повинно повернути True
 # is_even(3) повинно повернути False
 
-is_even = None # Ваш код тут, замініть None на лямбда-функцію
+is_even = lambda x: x % 2 == 0
+
+print(is_even(2))
+print(is_even(3))
+# Ваш код тут, замініть None на лямбда-функцію
 
 # -------------------------------------------------------------------------------------
 
@@ -148,4 +205,7 @@ is_even = None # Ваш код тут, замініть None на лямбда-�
 # filter_positive_numbers([-1, 2, -3, 4, 0, 5]) повинна повернути [2, 4, 5]
 def filter_positive_numbers(numbers):
     # Ваш код тут
-    return
+    filter_numbers = list(filter(lambda x: x >= 1, numbers))
+    return filter_numbers
+
+print(filter_positive_numbers([-1, 2, -3, 4, 0, 5]))

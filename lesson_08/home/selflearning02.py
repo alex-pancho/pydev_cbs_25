@@ -30,7 +30,11 @@ def greeting(name):
         str: Рядок привітання у форматі "Привіт, {name}!"
     """
     # TODO: Реалізуйте функцію
-    pass
+    
+    return f'Привіт, {name}!'
+
+print(greeting("Miki"))
+print()
 
 
 def calculate_area(length, width):
@@ -45,7 +49,11 @@ def calculate_area(length, width):
         float: Площа прямокутника
     """
     # TODO: Реалізуйте функцію
-    pass
+    area = length * width
+    return area
+print(calculate_area(2, 5))
+print()
+
 
 
 def is_even(number):
@@ -59,7 +67,14 @@ def is_even(number):
         bool: True якщо число парне, False якщо непарне
     """
     # TODO: Реалізуйте функцію
-    pass
+    
+    if number % 2 == 0:
+        num = True
+    else:
+        num = False
+    return num
+print(is_even(3))
+print()
 
 
 # =============================================================================
@@ -73,7 +88,7 @@ def create_profile(name, age, city="Не вказано", profession="Не вк�
     Args:
         name (str): Ім'я користувача
         age (int): Вік користувача
-        city (str, optional): Місто. За замовчуванням "Не вказано"
+        city str, optional): Місто. За замовчуванням "Не вказано"
         profession (str, optional): Професія. За замовчуванням "Не вказано"
         
     Returns:
@@ -81,7 +96,15 @@ def create_profile(name, age, city="Не вказано", profession="Не вк�
     """
     # TODO: Поверніть словник з ключами: name, age, city, profession
     pass
-
+    profile = {
+        "name": name,
+        "age": age,
+        "city": city,
+        "profession": profession
+    }
+    return profile
+print(create_profile('alex', 23))
+print()
 
 def calculate_price(base_price, discount=0, tax=0.2):
     """
@@ -96,7 +119,12 @@ def calculate_price(base_price, discount=0, tax=0.2):
         float: Фінальна ціна після знижки та податку
     """
     # TODO: Обчисліть фінальну ціну: (base_price * (1 - discount)) * (1 + tax)
-    pass
+    
+    price = (base_price * (1 - discount)) * (1 + tax)
+
+    return price
+print(calculate_price(10, 0.2, 0.3))
+print()
 
 
 # =============================================================================
@@ -114,7 +142,11 @@ def sum_all(*args):
         int/float: Сума всіх переданих чисел
     """
     # TODO: Поверніть суму всіх переданих аргументів
-    pass
+    sum_args = sum(args)
+    return sum_args
+
+print(sum_all(3, 4, 5))
+print()
 
 
 def create_student(**kwargs):
@@ -129,7 +161,13 @@ def create_student(**kwargs):
     """
     # TODO: Поверніть словник з переданими параметрами
     # Якщо name або age не передані, встановіть їх за замовчуванням
-    pass
+
+    student = dict(kwargs)
+    student.setdefault("name", "no data")
+    student.setdefault("age", "no data")
+    return student
+print(create_student(name="Kamoni"))
+print()
 
 
 def flexible_function(*args, **kwargs):
@@ -144,7 +182,10 @@ def flexible_function(*args, **kwargs):
         tuple: Кортеж з двох елементів: (список args, словник kwargs)
     """
     # TODO: Поверніть кортеж (list(args), kwargs)
-    pass
+
+    return list(args), kwargs
+print(flexible_function(2, 3, 4, name="alex", age="18"))
+print()
 
 
 # =============================================================================
@@ -152,13 +193,16 @@ def flexible_function(*args, **kwargs):
 # =============================================================================
 
 # Завдання 4.1: Створіть лямбда-функцію для піднесення числа до квадрату
-square = None  # TODO: Замініть None на лямбда-функцію
+square = lambda x: x ** 2
+# TODO: Замініть None на лямбда-функцію
 
 # Завдання 4.2: Лямбда-функція для перевірки чи число більше 10
-is_greater_than_10 = None  # TODO: Замініть None на лямбда-функцію
+is_greater_than_10 = lambda x: x > 10 
+# TODO: Замініть None на лямбда-функцію
 
 # Завдання 4.3: Лямбда-функція для об'єднання двох рядків
-concatenate = None  # TODO: Замініть None на лямбда-функцію
+concatenate = lambda x, y: x + y 
+# TODO: Замініть None на лямбда-функцію
 
 
 # =============================================================================
@@ -178,7 +222,10 @@ def check_type_vs_isinstance(value, check_type):
         tuple: (результат type(), результат isinstance())
     """
     # TODO: Поверніть кортеж з результатами type(value) == check_type та isinstance(value, check_type)
-    pass
+
+    return type(value) == check_type, isinstance(value, check_type)
+print(check_type_vs_isinstance(2, str))
+print()
 
 
 def sort_vs_sorted_demo(numbers):
@@ -192,7 +239,13 @@ def sort_vs_sorted_demo(numbers):
         tuple: (оригінальний список після sort(), новий відсортований список)
     """
     # TODO: Застосуйте sort() до оригінального списку і поверніть його разом з sorted()
-    pass
+
+    original_numbers = numbers.copy()
+    numbers.sort()
+    sorted_numbers = sorted(original_numbers)
+    return(numbers, sorted_numbers)
+print(sort_vs_sorted_demo([1, 2, 3]))
+print()
 
 
 # =============================================================================
@@ -212,7 +265,17 @@ def filter_and_process(data, filter_func, process_func):
         list: Список оброблених елементів, які пройшли фільтрацію
     """
     # TODO: Відфільтруйте дані та обробіть їх
-    pass
+
+    return[process_func(item) for item in data if filter_func(item)]
+
+def is_pos(num):
+    return num > 0
+
+def square_num (num):
+    return num ** 2
+
+print(filter_and_process([1, 2, 3, 4], is_pos, square_num))
+print()
 
 
 def create_multiplier(factor):
@@ -233,6 +296,7 @@ def advanced_calculator(*args, operation="sum", **kwargs):
     """
     Завдання 6.3: Розширений калькулятор
     
+    **kwargs
     Args:
         *args: Числа для обчислення
         operation (str): Операція ("sum", "multiply", "max", "min")
@@ -242,7 +306,26 @@ def advanced_calculator(*args, operation="sum", **kwargs):
         float/int: Результат обчислення
     """
     # TODO: Реалізуйте калькулятор з різними операціями
-    pass
+
+    
+    if operation == "sum":
+        res_calc = sum(args)
+    elif operation == "multiply":
+        res_calc = 1
+        for num in args:
+            res_calc *= num
+    elif operation == "max":
+        res_calc = max(args)
+    elif operation == "min":
+        res_calc = min(args)
+
+    if "round_to" in kwargs:
+        res_calc = round(res_calc, kwargs["round_to"])
+
+    return res_calc
+
+print(advanced_calculator(1, 2, 3.4342423424, 4, operation="multiply", round_to=2))
+print()
 
 
 
@@ -256,14 +339,14 @@ if __name__ == "__main__":
     
     # Після реалізації функцій, розкоментуйте код нижче:
     
-    # print(greeting("Олексій"))
-    # print(calculate_area(5, 3))
-    # print(is_even(4))
+    print(greeting("Олексій"))
+    print(calculate_area(5, 3))
+    print(is_even(4))
     
-    # profile = create_profile("Марія", 25, city="Київ")
-    # print(profile)
+    profile = create_profile("Марія", 25, city="Київ")
+    print(profile)
     
-    # print(sum_all(1, 2, 3, 4, 5))
+    print(sum_all(1, 2, 3, 4, 5))
 
     
     print("Реалізуйте всі функції та перевірте їх за допомогою test_selflearning.py")
