@@ -24,7 +24,7 @@ rolling in wealth."""
 # task 01 ==
 """ Дані у строці adwentures_of_tom_sawer розбиті випадковим чином, через помилку.
 треба замінити кінець абзацу на пробіл .replace("\n", " ")"""
-print("hello all")
+print("hello all nice")
 # task 02 ==
 """ Замініть .... на пробіл
 """
