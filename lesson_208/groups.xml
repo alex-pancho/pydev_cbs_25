@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+    <book id="1">
+        <title>Python для початківців</title>
+        <author>Іван Петренко</author>
+        <content>Ця книга є вступом до програмування на Python.
+            <chapter id="1">Основи синтаксису</chapter>
+            <chapter id="2">Типи даних</chapter>
+            <appendix>Робота з файлами
+                <a1>001</a1>
+                <a2>002</a2>
+            </appendix>
+        </content>
+        <year>2023</year>
+        <price>350</price>
+        <available>true</available>
+    </book>
+    <book id="2">
+        <title>Алгоритми та структури даних</title>
+        <author>Марія Коваленко</author>
+        <content>Ця книга є вступом до програмування на Java.
+            <chapter id="1">Основи Java</chapter>
+            <chapter id="2">JSON</chapter>
+        </content>
+        <year>2022</year>
+        <price>420</price>
+        <available>false</available>
+    </book>
+</library>
