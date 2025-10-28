@@ -17,23 +17,80 @@ my_second_car = BasicCar()
 print("my_second_car", my_second_car.brand, my_second_car.model, my_second_car.wheels)
 
 class Car:
-    engine_status = False
+    is_engine_on = False
 
     def __init__(self, brand, model, wheels=4):
         self.brand = brand
         self.model = model
         self.wheels = wheels
-        # self.engine_status = False
+        # self.is_engine_on = False
     
     def engine_key(self):
         print("Зміна стану двигуна викликана")
-        self.engine_status = not self.engine_status
+        self.is_engine_on = not self.is_engine_on
 
-my_3_car = Car("Nissan", "Patrol", 5)
+my_3_car = Car("Nissan", "Patrol", 5) # 
 print("my_3_car", my_3_car.brand, my_3_car.model, my_3_car.wheels)
-print("my_3_car engine",my_3_car.engine_status)
+print("my_3_car engine",my_3_car.is_engine_on)
 my_3_car.engine_key()
-print("my_3_car engine afr call engine_key",my_3_car.engine_status)
+print("my_3_car engine afr call engine_key",my_3_car.is_engine_on)
+
+
+class CarNew:
+    is_engine_on = False
+
+    def __init__(self, brand, model, wheels=4):
+        self.brand = brand
+        self.model = model
+        self.wheels = wheels
+        # self.is_engine_on = False
+    
+    def engine_key(self, valid_key:int):
+        print("Зміна стану двигуна викликана")
+        if valid_key == 112233:
+            self.is_engine_on = not self.is_engine_on
+            print("Все добре")
+        else:
+            print("Невірний ключ, двигун не заведеться")
+
+my_4_car = CarNew("Zaz", "Zapor", 5) # 
+print("my_3_car", my_4_car.brand, my_4_car.model, my_4_car.wheels)
+print("my_3_car engine", my_4_car.is_engine_on)
+my_4_car.engine_key(114445)
+# my_4_car.is_engine_on = True
+print("my_3_car engine afr call engine_key", my_4_car.is_engine_on)
+
+
+class CarIncap:
+
+    def __init__(self, brand, model, wheels=4):
+        self.brand = brand
+        self.model = model
+        self.wheels = wheels
+        self.__is_engine_on = False
+    
+    @property
+    def is_engine_on(self):
+        return self.__is_engine_on
+    
+    @is_engine_on.setter
+    def is_engine_on(self, valid_key:int):
+        print("Зміна стану двигуна викликана")
+        if valid_key == 112233:
+            self.__is_engine_on = not self.__is_engine_on
+            print("Все добре")
+        else:
+            print("Невірний ключ, двигун не заведеться")
+
+my_5_car = CarIncap("BMW", "Detroyit", 5) # 
+print("my_3_car", my_5_car.brand, my_5_car.model, my_5_car.wheels)
+print("my_3_car engine", my_5_car.is_engine_on)
+my_5_car.is_engine_on = 112233
+# my_5_car.is_engine_on = True
+print("my_3_car engine afr call engine_key", my_5_car.is_engine_on)
+
+car6 = CarIncap("Toyota", "Supra")
+print("my_6_car engine afr call engine_key", car6.is_engine_on)
 
 class Animal:
 
@@ -65,7 +122,7 @@ class Cat(Animal):
         return "Myavv"
 
 class DoglyCat(Dog, Cat):
-    
+    pass
     def __repr__(self):
         return f"Its {self.name}, DoglyCat"
     
@@ -82,5 +139,4 @@ print(tom.speak(), tom.breathe(), tom.name)
 
 polymorph = DoglyCat("Polly")
 print(polymorph.speak(), polymorph.breathe(), polymorph.name)
-
 print(polymorph)
