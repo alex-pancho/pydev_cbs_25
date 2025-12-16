@@ -1,0 +1,34 @@
+services:
+  postgres:
+    container_name: postgres_sql_essential
+    image: postgres:14
+    environment:
+      POSTGRES_DB: "sql_essential_db"
+      POSTGRES_USER: "student"
+      POSTGRES_PASSWORD: "cyberbionics"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - ./init_DB:/docker-entrypoint-initdb.d
+      - ./data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U student -d sql_essential_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+
+  pgadmin:
+    container_name: pgadmin_sql_essential
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@example.com"
+      PGADMIN_DEFAULT_PASSWORD: "sql_essential"
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    volumes:
+      - ./pgadmin:/var/lib/pgadmin
+    ports:
+      - "5055:80"
+    restart: unless-stopped
