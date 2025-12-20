@@ -27,7 +27,7 @@ if win:
     host = "127.0.0.1"
     port = 5433
 else:
-    host = "172.19.237.97"  # ВАЖЛИВО $ ip addr show eth0
+    host = "172.24.215.31"  # ВАЖЛИВО $ ip addr show eth0
     port = 5432
     database = "sql_essential_db"
     user = "student"
